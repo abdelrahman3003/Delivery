@@ -17,6 +17,7 @@ class SigninController extends GetxController {
     update();
     var response = await postDataSignup.postDataSignin(email, password);
     statusRequest = handlingApiData(response);
+
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
         statusRequest = StatusRequest.failure;

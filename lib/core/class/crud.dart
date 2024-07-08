@@ -7,7 +7,7 @@ import 'package:path/path.dart';
 import '../functions/checkinternet.dart';
 import 'statuscode.dart';
 
-String _basicAuth = 'Basic ' + base64Encode(utf8.encode('temsah13:16797346'));
+String _basicAuth = 'Basic ${base64Encode(utf8.encode('temsah13:16797346'))}';
 
 Map<String, String> myheaders = {'Authorization': _basicAuth};
 
@@ -33,6 +33,7 @@ class Crud {
   Future<Either<StatusRequest, Map>> postData(String url, Map data) async {
     try {
       if (await checkInternetConnection()) {
+        print("success ======= errorserver");
         var response =
             await http.post(Uri.parse(url), body: data, headers: myheaders);
 
