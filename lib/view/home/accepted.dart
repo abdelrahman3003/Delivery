@@ -5,8 +5,6 @@ class AcceptedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("accepted"),
-    );
+    return Column(children: [],);
   }
 }

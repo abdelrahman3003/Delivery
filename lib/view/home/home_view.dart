@@ -14,9 +14,15 @@ class HomeView extends StatelessWidget {
     Get.put(HomeController());
     return Scaffold(
       body: GetBuilder<HomeController>(
-        builder: (controller) => IndexedStack(
-          index: controller.currentIndex,
-          children: const [PendingView(), AcceptedView(), SettingView()],
+        builder: (controller) => SafeArea(
+          child: IndexedStack(
+            index: controller.currentIndex,
+            children: const [
+              PendingView(),
+              AcceptedView(),
+              SettingView(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: GetBuilder<HomeController>(

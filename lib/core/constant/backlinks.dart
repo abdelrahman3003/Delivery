@@ -12,10 +12,10 @@ const String resetpasswordNameLink =
 //
 //orders
 const String acceptedOrdersNamelink =
-    "$serverNameLink/delivery/delivery/accepted.php";
+    "$serverNameLink/delivery/orders/accepted.php";
 const String pendingOrdersNamelink =
-    "$serverNameLink/delivery/delivery/pending.php";
+    "$serverNameLink/delivery/orders/pending.php";
 const String detailsOrdersNamelink =
-    "$serverNameLink/delivery/delivery/details.php";
+    "$serverNameLink/delivery/orders/details.php";
 const String archievedOrdersNamelink =
-    "$serverNameLink/delivery/delivery/archive.php";
+    "$serverNameLink/delivery/orders/archive.php";

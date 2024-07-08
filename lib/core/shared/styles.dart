@@ -1,3 +1,4 @@
+import 'package:delivery/core/constant/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,11 @@ abstract class Styles {
     fontSize: 25,
     fontWeight: FontWeight.normal,
     color: CupertinoColors.white,
+  );
+  static const textStyle25primary = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+    color: ColorsApp.kprimaryColor1,
   );
   static const textStyle25black = TextStyle(
     fontSize: 25,

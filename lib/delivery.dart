@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'core/constant/binding.dart';
@@ -14,15 +15,22 @@ class Delivery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LocalController controller = Get.put(LocalController());
-    return GetMaterialApp(
-      locale: controller.language,
-      translations: AppTrnaslations(),
-      debugShowCheckedModeBanner: false,
-      getPages: getPages,
-      initialBinding: AppBinding(),
-      //routes: routes,
-      theme: ThemeData(fontFamily: "Cairo"),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        // Use builder only if you need to use library outside ScreenUtilInit context
+        builder: (_, child) {
+          return GetMaterialApp(
+            locale: controller.language,
+            translations: AppTrnaslations(),
+            debugShowCheckedModeBanner: false,
+            getPages: getPages,
+            initialBinding: AppBinding(),
+            //routes: routes,
+            theme: ThemeData(fontFamily: "Cairo"),
+          );
+        });
   }
 }
 
