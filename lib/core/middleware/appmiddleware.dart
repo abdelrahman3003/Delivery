@@ -10,11 +10,8 @@ class AppMiddleWare extends GetMiddleware {
   AppServices appServices = Get.find();
   @override
   RouteSettings? redirect(String? route) {
-    if (appServices.sharedPreferences.getString("step") == "2") {
-      return const RouteSettings(name: kHomeView);
-    }
     if (appServices.sharedPreferences.getString("step") == "1") {
-      return const RouteSettings(name: kHomeView);
+      return const RouteSettings(name: kPendingView);
     }
 
     return null;

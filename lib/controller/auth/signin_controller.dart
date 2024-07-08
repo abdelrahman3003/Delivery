@@ -41,7 +41,7 @@ class SigninController extends GetxController {
             .setString("phone", response['data'][0]['delivery_phone']);
         appServices.sharedPreferences.setInt("home", 8);
         appServices.sharedPreferences.setInt("company", 9);
-        appServices.sharedPreferences.setString("step", "2");
+        appServices.sharedPreferences.setString("step", "1");
         FirebaseMessaging.instance.subscribeToTopic("delivery");
         FirebaseMessaging.instance.subscribeToTopic("delivery$userid");
         Get.offNamed(kHomeView);

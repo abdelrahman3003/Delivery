@@ -1,8 +1,10 @@
+import 'package:delivery/view/home/pending_view.dart';
+import 'package:delivery/view/home/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/home/home_conreoller.dart';
-import 'home_page_view.dart';
+import 'accepted.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -14,12 +16,7 @@ class HomeView extends StatelessWidget {
       body: GetBuilder<HomeController>(
         builder: (controller) => IndexedStack(
           index: controller.currentIndex,
-          children: const [
-            HomePageView(),
-            Center(
-              child: Text('Setting Page'),
-            ),
-          ],
+          children: const [PendingView(), AcceptedView(), SettingView()],
         ),
       ),
       bottomNavigationBar: GetBuilder<HomeController>(
@@ -31,8 +28,12 @@ class HomeView extends StatelessWidget {
           },
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+              icon: Icon(Icons.hourglass_empty),
+              label: 'Pending',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.check_circle),
+              label: 'Accepteed',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),

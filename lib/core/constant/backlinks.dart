@@ -10,3 +10,12 @@ const String resetpasswordNameLink =
     "$serverNameLink/delivery/auth/resetpassword.php";
 
 //
+//orders
+const String acceptedOrdersNamelink =
+    "$serverNameLink/delivery/delivery/accepted.php";
+const String pendingOrdersNamelink =
+    "$serverNameLink/delivery/delivery/pending.php";
+const String detailsOrdersNamelink =
+    "$serverNameLink/delivery/delivery/details.php";
+const String archievedOrdersNamelink =
+    "$serverNameLink/delivery/delivery/archive.php";

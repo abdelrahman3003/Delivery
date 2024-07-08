@@ -6,7 +6,10 @@ import '../../view/auth/reset_password.dart';
 import '../../view/auth/signin.dart';
 import '../../view/auth/verifycode.dart';
 import '../../view/auth/widgets/restpassword/reset_password_succes.dart';
+import '../../view/home/accepted.dart';
 import '../../view/home/home_view.dart';
+import '../../view/home/pending_view.dart';
+import '../../view/home/setting.dart';
 import '../middleware/appmiddleware.dart';
 
 const kSignin = "/Signin";
@@ -15,7 +18,10 @@ const kVerifyCode = "/kVerifyCode";
 const kSignupSucess = "/SuccessSignup";
 const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
-const kHomeView = "/kHomeView";
+const kHomeView = "/HomeView";
+const kPendingView = "/PendingView";
+const kAcceptedView = "/kAcceptedView";
+const kSettingView = "/SettingView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(name: "/", page: () => const Signin(), middlewares: [
     AppMiddleWare(),
@@ -23,6 +29,9 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kCheckEmail, page: () => const CheckEmail()),
   GetPage(name: kVerifyCode, page: () => const VerifyCode()),
   GetPage(name: kRestPassword, page: () => const RestPassword()),
-  GetPage(name: kHomeView, page: () => const HomeView()),
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
+  GetPage(name: kHomeView, page: () => const HomeView()),
+  GetPage(name: kPendingView, page: () => const PendingView()),
+  GetPage(name: kAcceptedView, page: () => const AcceptedView()),
+  GetPage(name: kSettingView, page: () => const SettingView()),
 ];
