@@ -1,5 +1,5 @@
-import '../../../core/class/crud.dart';
-import '../../../core/constant/backlinks.dart';
+import '../../../../core/class/crud.dart';
+import '../../../../core/constant/backlinks.dart';
 
 class PostDataSignin {
   Crud crud;
