@@ -1,3 +1,5 @@
+import 'package:delivery/data/model/order_model.dart';
+import 'package:delivery/view/home/widget/order_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,6 @@ class PendingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body:  Center(child: Text("Pending")),);
+    return OrderCard(orderModel: OrderModel(), index: 0);
   }
 }

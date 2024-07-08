@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/functions/handling _data.dart';
 import '../../core/services/services.dart';
-import '../../data/remote/auth/posdata_signin.dart';
+import '../../data/dataSource/remote/auth/posdata_signin.dart';
 
 class SigninController extends GetxController {
   PostDataSignin postDataSignup = PostDataSignin(Get.find());

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../core/class/statuscode.dart';
 import '../../core/constant/routsApp.dart';
 import '../../core/functions/handling _data.dart';
-import '../../data/remote/auth/reset_password_data.dart';
+import '../../data/dataSource/remote/auth/reset_password_data.dart';
 import 'forget_password_controller.dart';
 
 
