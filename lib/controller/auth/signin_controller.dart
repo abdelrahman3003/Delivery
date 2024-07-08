@@ -31,19 +31,19 @@ class SigninController extends GetxController {
         //   print("========$token");
         // });
         appServices.sharedPreferences
-            .setString("username", "${response['data'][0]['users_name']}");
+            .setString("username", "${response['data'][0]['delivery_name']}");
         appServices.sharedPreferences
-            .setString("id", "${response['data'][0]['users_id']}");
+            .setString("id", "${response['data'][0]['delivery_id']}");
         String userid = appServices.sharedPreferences.getString("id")!;
         appServices.sharedPreferences
-            .setString("email", response['data'][0]['users_email']);
+            .setString("email", response['data'][0]['delivery_email']);
         appServices.sharedPreferences
-            .setString("phone", response['data'][0]['users_phone']);
+            .setString("phone", response['data'][0]['delivery_phone']);
         appServices.sharedPreferences.setInt("home", 8);
         appServices.sharedPreferences.setInt("company", 9);
         appServices.sharedPreferences.setString("step", "2");
-        FirebaseMessaging.instance.subscribeToTopic("users");
-        FirebaseMessaging.instance.subscribeToTopic("users$userid");
+        FirebaseMessaging.instance.subscribeToTopic("delivery");
+        FirebaseMessaging.instance.subscribeToTopic("delivery$userid");
         Get.offNamed(kHomeView);
       }
 

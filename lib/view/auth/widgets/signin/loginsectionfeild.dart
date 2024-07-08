@@ -32,6 +32,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
         AuthField(
           icon: Icons.email,
           text: "Email",
+          controller: TextEditingController(text: 'Abdo33@gmail.com'),
           onsave: (value) {
             email = value!;
           },
@@ -47,6 +48,7 @@ class _LoginSectionFieldsState extends State<LoginSectionFields> {
                 onsave: (value) {
                   password = value!;
                 },
+                controller: TextEditingController(text: '123456'),
                 validator: (val) {
                   return validation(type: "Password", val: val!);
                 },
