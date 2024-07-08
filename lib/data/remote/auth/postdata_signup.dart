@@ -1,21 +1,21 @@
 
-import '../../../core/class/crud.dart';
-import '../../../core/constant/backlinks.dart';
+// import '../../../core/class/crud.dart';
+// import '../../../core/constant/backlinks.dart';
 
-class PostDataSignup {
-  Crud crud;
-  PostDataSignup(this.crud);
-  postDataSignup(
-      String username, String email, String phone, String password) async {
-    var response = await crud.postData(
-      signupNameLink,
-      {
-        "username": username,
-        "email": email,
-        "phone": phone,
-        "password": password,
-      },
-    );
-    return response.fold((l) => l, (r) => r);
-  }
-}
+// class PostDataSignup {
+//   Crud crud;
+//   PostDataSignup(this.crud);
+//   postDataSignup(
+//       String username, String email, String phone, String password) async {
+//     var response = await crud.postData(
+//       signupNameLink,
+//       {
+//         "username": username,
+//         "email": email,
+//         "phone": phone,
+//         "password": password,
+//       },
+//     );
+//     return response.fold((l) => l, (r) => r);
+//   }
+// }

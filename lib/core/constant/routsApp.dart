@@ -6,7 +6,7 @@ import '../../view/auth/reset_password.dart';
 import '../../view/auth/signin.dart';
 import '../../view/auth/verifycode.dart';
 import '../../view/auth/widgets/restpassword/reset_password_succes.dart';
-import '../../view/auth/widgets/signup/success_signup.dart';
+import '../../view/home/home_view.dart';
 import '../middleware/appmiddleware.dart';
 
 const kSignin = "/Signin";
@@ -15,6 +15,7 @@ const kVerifyCode = "/kVerifyCode";
 const kSignupSucess = "/SuccessSignup";
 const kResetpasswordsucsess = "/Resetpasswordsucsess";
 const kRestPassword = "/RestPassword";
+const kHomeView = "/kHomeView";
 List<GetPage<dynamic>>? getPages = [
   GetPage(name: "/", page: () => const Signin(), middlewares: [
     AppMiddleWare(),
@@ -22,6 +23,6 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: kCheckEmail, page: () => const CheckEmail()),
   GetPage(name: kVerifyCode, page: () => const VerifyCode()),
   GetPage(name: kRestPassword, page: () => const RestPassword()),
-  GetPage(name: kSignupSucess, page: () => const SuccessSignup()),
+  GetPage(name: kHomeView, page: () => const HomeView()),
   GetPage(name: kResetpasswordsucsess, page: () => const RestSuccesPassword()),
 ];

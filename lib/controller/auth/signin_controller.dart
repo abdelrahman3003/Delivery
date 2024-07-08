@@ -1,3 +1,4 @@
+import 'package:delivery/core/constant/routsApp.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
@@ -42,7 +43,7 @@ class SigninController extends GetxController {
         appServices.sharedPreferences.setString("step", "2");
         FirebaseMessaging.instance.subscribeToTopic("users");
         FirebaseMessaging.instance.subscribeToTopic("users$userid");
-       // Get.offNamed();
+        Get.offNamed(kHomeView);
       }
 
       update();
