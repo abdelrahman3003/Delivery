@@ -28,7 +28,6 @@ class PendingController extends GetxController {
         pendiingOrdersList.addAll(data.map((e) => OrderModel.fromJson(e)));
       }
     }
-    print("------- status = $statusRequest");
 
     update();
   }
