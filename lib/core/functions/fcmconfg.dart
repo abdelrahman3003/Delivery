@@ -1,4 +1,6 @@
+import 'package:delivery/controller/home/pending_controller..dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 
 
@@ -16,15 +18,15 @@ requestpermisionnotification() async {
 
 fcmconfig() {
   FirebaseMessaging.onMessage.listen((message) {
-    // FlutterRingtonePlayer().playNotification();
+    FlutterRingtonePlayer().playNotification();
     Get.snackbar(message.notification!.title!, message.notification!.body!);
-   // refreshorderpage(message.data);
+    refreshorderpage(message.data);
   });
 }
 
 refreshorderpage(data) {
-  // if (Get.currentRoute == "/OrderView" && data['pagename'] == "approved") {
-  //   OrderControllerImp controller = Get.find();
-  //   controller.refreshOrderpage();
+  if (Get.currentRoute == "/OrderView" && data['pagename'] == "approved") {
+    PendingController controller = Get.find();
+    controller.refreshOrderpage();
   }
-
+}

@@ -1,5 +1,6 @@
 import 'package:delivery/controller/home/pending_controller..dart';
 import 'package:delivery/core/class/data_handilng.dart';
+import 'package:delivery/core/class/statuscode.dart';
 import 'package:delivery/core/shared/styles.dart';
 import 'package:delivery/view/home/widget/order_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,8 +32,18 @@ class PendingView extends StatelessWidget {
                 itemCount: controller.pendiingOrdersList.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => OrderCard(
-                    orderModel: controller.pendiingOrdersList[index],
-                    index: index),
+                  isLoadingApprove: controller.statusRequestApprove ==
+                          StatusRequest.loading &&
+                      controller.index == index,
+                  orderModel: controller.pendiingOrdersList[index],
+                  onPressedApprove: () {
+                    controller.approveOrder(
+                        orderid: controller.pendiingOrdersList[index].ordersId!,
+                        userid:
+                            controller.pendiingOrdersList[index].ordersUserid!);
+                    controller.index = index;
+                  },
+                ),
               ),
             )),
           ],
