@@ -1,10 +1,9 @@
 import 'package:delivery/core/constant/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jiffy/jiffy.dart';
 
 import '../../../core/shared/styles.dart';
-import '../../../core/shared/widgets/buttons/onboarding_Button.dart';
 import '../../../data/model/order_model.dart';
 import 'text_item.dart';
 
@@ -12,11 +11,13 @@ class OrderCard extends StatelessWidget {
   const OrderCard({
     super.key,
     required this.orderModel,
-    required this.index,
+    this.onPressedApprove,
+    required this.isLoadingApprove,
   });
 
   final OrderModel orderModel;
-  final int index;
+  final bool isLoadingApprove;
+  final Function()? onPressedApprove;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -68,7 +69,7 @@ class OrderCard extends StatelessWidget {
             ),
             const SizedBox(width: 5),
             TextButton(
-              onPressed: () {},
+              onPressed: onPressedApprove,
               style: ButtonStyle(
                 backgroundColor: const WidgetStatePropertyAll(Colors.green),
                 shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
@@ -77,13 +78,21 @@ class OrderCard extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Text(
-                "Accepet",
-                style: Styles.textStyle16.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              child: isLoadingApprove
+                  ? Center(
+                      child: SizedBox(
+                      height: 15.h,
+                      width: 15.w,
+                      child:
+                          const CircularProgressIndicator(color: Colors.white),
+                    ))
+                  : Text(
+                      "Approve",
+                      style: Styles.textStyle16.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
             ),
           ],
         ),

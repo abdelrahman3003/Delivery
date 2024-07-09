@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 // import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../functions/fcmconfg.dart';
 import '../services/services.dart';
-
 
 class LocalController extends GetxController {
   Locale? language;
@@ -16,31 +16,31 @@ class LocalController extends GetxController {
     Get.updateLocale(locale);
   }
 
-  // requesPermissionLocation() async {
-  //   bool serviceEnabled;
-  //   LocationPermission permission;
-  //   serviceEnabled = await Geolocator.isLocationServiceEnabled();
-  //   if (!serviceEnabled) {
-  //     return Get.snackbar("Warning", "please turn on  location services");
-  //   }
-  //   permission = await Geolocator.checkPermission();
-  //   if (permission == LocationPermission.denied) {
-  //     permission = await Geolocator.requestPermission();
-  //     if (permission == LocationPermission.denied) {
-  //       return Get.snackbar(
-  //           "Warning", "Are you want for this app to reach on location");
-  //     }
-  //   }
-  //   if (permission == LocationPermission.deniedForever) {
-  //     return Get.snackbar(
-  //         "Warning", "can not work on this app without location");
-  //   }
-  // }
+  requesPermissionLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Get.snackbar("Warning", "please turn on  location services");
+    }
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Get.snackbar(
+            "Warning", "Are you want for this app to reach on location");
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      return Get.snackbar(
+          "Warning", "can not work on this app without location");
+    }
+  }
 
   @override
   void onInit() {
     requestpermisionnotification();
-  //  requesPermissionLocation();
+    requesPermissionLocation();
     fcmconfig();
     String? sharedpreflanguage =
         appServices.sharedPreferences.getString("lang");
