@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "773836528322",
-    "project_id": "delivery-638db",
-    "storage_bucket": "delivery-638db.appspot.com"
+    "project_number": "896284499229",
+    "project_id": "ecommerce-a56d9",
+    "storage_bucket": "ecommerce-a56d9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:773836528322:android:1fff184273e0fabe59795b",
+        "mobilesdk_app_id": "1:896284499229:android:515739a5a68374dbf855f4",
         "android_client_info": {
           "package_name": "com.example.delivery"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAXaBFlFjmbeBRUI9m3-SYRhsGeHLFeOaE"
+          "current_key": "AIzaSyANb8AulnBom2oYYgnEyPlHd1oayfEJ0DU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896284499229:android:e3d85c8ec02a4eaff855f4",
+        "android_client_info": {
+          "package_name": "com.example.eccommerce4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANb8AulnBom2oYYgnEyPlHd1oayfEJ0DU"
         }
       ],
       "services": {
