@@ -40,7 +40,6 @@ class DetailsController extends GetxController {
 
     if (statusRequest == StatusRequest.success) {
       if (response["status"] == "failure") {
-        print("==================== if ");
       } else {
         List data = response["data"];
         orderDtailsList.addAll(data.map((e) => OrderDetailsModel.fromJson(e)));
