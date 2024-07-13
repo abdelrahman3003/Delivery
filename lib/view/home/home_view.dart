@@ -1,10 +1,10 @@
 import 'package:delivery/view/home/pending_view.dart';
-import 'package:delivery/view/home/setting.dart';
+import 'package:delivery/view/home/setting_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/home/home_conreoller.dart';
-import 'accepted.dart';
+import 'accepted_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -15,21 +15,13 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: GetBuilder<HomeController>(
         builder: (controller) => SafeArea(
-          child: IndexedStack(
-            index: controller.currentIndex,
-            children: const [
-              PendingView(),
-              AcceptedView(),
-              SettingView(),
-            ],
-          ),
+          child: controller.pageList[controller.pageCount],
         ),
       ),
       bottomNavigationBar: GetBuilder<HomeController>(
         builder: (controller) => BottomNavigationBar(
-          currentIndex: controller.currentIndex,
+          currentIndex: controller.pageCount,
           onTap: (index) {
-            // Call the function in the controller to change the tab
             controller.changeTabIndex(index);
           },
           items: const [

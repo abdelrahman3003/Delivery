@@ -22,4 +22,12 @@ class ViewOrderData {
     );
     return response.fold((l) => l, (r) => r);
   }
+
+  detailsorder({required orderid}) async {
+    var response = await crud.postData(
+      detailsOrdersNamelink,
+      {"orderid": orderid.toString()},
+    );
+    return response.fold((l) => l, (r) => r);
+  }
 }

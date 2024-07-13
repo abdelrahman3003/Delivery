@@ -13,18 +13,21 @@ class OrderCard extends StatelessWidget {
     required this.orderModel,
     this.onPressedApprove,
     required this.isLoadingApprove,
+    this.onPressedetials,
   });
 
   final OrderModel orderModel;
   final bool isLoadingApprove;
   final Function()? onPressedApprove;
+  final Function()? onPressedetials;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Row(children: [
-          TextItem(tilte: "Order Number", subtilte: " 200"),
+        Row(children: [
+          TextItem(tilte: "Order Number", subtilte: ' ${orderModel.ordersId}'),
         ]),
         TextItem(
             tilte: "Order date",
@@ -43,13 +46,13 @@ class OrderCard extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                "Totla Price:  200 \$",
+                "Totla Price:  ${orderModel.ordersPrice} \$",
                 style: Styles.textStyle20
                     .copyWith(color: Colors.red, fontWeight: FontWeight.bold),
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: onPressedetials,
               style: ButtonStyle(
                 backgroundColor:
                     const WidgetStatePropertyAll(ColorsApp.kprimaryColor1),
@@ -87,7 +90,7 @@ class OrderCard extends StatelessWidget {
                           const CircularProgressIndicator(color: Colors.white),
                     ))
                   : Text(
-                      "Approve",
+                      orderModel.ordersStatus == 2 ? "Approve" : "Done",
                       style: Styles.textStyle16.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

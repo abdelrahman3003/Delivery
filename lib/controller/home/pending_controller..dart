@@ -1,6 +1,6 @@
-
 import 'package:delivery/controller/home/home_conreoller.dart';
 import 'package:delivery/core/class/statuscode.dart';
+import 'package:delivery/core/constant/routsApp.dart';
 import 'package:delivery/data/dataSource/remote/order/request_order.dart';
 import 'package:delivery/data/dataSource/remote/order/view_orders.dart';
 import 'package:delivery/data/model/order_model.dart';
@@ -11,6 +11,7 @@ import '../../core/functions/handling _data.dart';
 class PendingController extends GetxController {
   StatusRequest statusRequest = StatusRequest.none;
   StatusRequest statusRequestApprove = StatusRequest.none;
+  StatusRequest statusRequestdetails = StatusRequest.none;
   ViewOrderData viewOrderData = ViewOrderData(Get.find());
   RequestOrder requestOrder = RequestOrder(Get.find());
   List<OrderModel> pendiingOrdersList = [];
@@ -39,8 +40,6 @@ class PendingController extends GetxController {
     update();
   }
 
-
-
   void approveOrder({required int orderid, required int userid}) async {
     statusRequestApprove = StatusRequest.loading;
     update();
@@ -59,8 +58,14 @@ class PendingController extends GetxController {
     update();
   }
 
+  goToDetails() {
+    Get.toNamed(kDetailsView,
+        arguments: {'orderModel': pendiingOrdersList[index!]});
+  }
+
   refreshOrderpage() {
     pendiingOrdersList.clear();
     getPendingOrders();
+    update();
   }
 }
