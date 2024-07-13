@@ -12,11 +12,15 @@ class OrderDetailsList extends GetView<DetailsController> {
     return SizedBox(
       child: Opacity(
           opacity: .6,
-          child: OrderDetailsRow(
-              item: controller.orderDtailsList[0].itemsName ?? "",
-              qty: "${controller.orderDtailsList[0].itemcount ?? ""}",
-              price:
-                  "${controller.orderDtailsList[0].sumitemdiscountprice!} \$")),
+          child: ListView.builder(
+            itemCount: controller.orderDtailsList.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) => OrderDetailsRow(
+                item: controller.orderDtailsList[index].itemsName ?? "",
+                qty: "${controller.orderDtailsList[index].itemcount ?? ""}",
+                price:
+                    "${controller.orderDtailsList[index].sumitemdiscountprice!} \$"),
+          )),
     );
   }
 }
