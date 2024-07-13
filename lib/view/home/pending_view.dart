@@ -21,7 +21,7 @@ class PendingView extends StatelessWidget {
           children: [
             const Center(
               child: Text(
-                "Orders",
+                "Pending Orders",
                 style: Styles.textStyle25primary,
               ),
             ),
@@ -37,11 +37,15 @@ class PendingView extends StatelessWidget {
                       controller.index == index,
                   orderModel: controller.pendiingOrdersList[index],
                   onPressedApprove: () {
+                    controller.index = index;
                     controller.approveOrder(
                         orderid: controller.pendiingOrdersList[index].ordersId!,
                         userid:
                             controller.pendiingOrdersList[index].ordersUserid!);
+                  },
+                  onPressedetials: () {
                     controller.index = index;
+                    controller.goToDetails();
                   },
                 ),
               ),

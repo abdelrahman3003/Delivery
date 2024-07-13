@@ -16,4 +16,12 @@ class RequestOrder {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+  doneOrder(int orderid, int userid) async {
+    var response = await crud.postData(doneOrderNamelink, {
+      "orderid": orderid.toString(),
+      "userid": userid.toString(),
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }
